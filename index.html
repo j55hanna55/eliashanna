@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0b0b" />
+
+  <title>Elias Hanna | Hair Stylist at BOMANE Salon Beverly Hills</title>
+  <meta
+    name="description"
+    content="I’m Elias Hanna, a Beverly Hills hair stylist. Explore my work, follow my Instagram, and schedule an appointment."
+  />
+
+  <!-- Elegant serif + clean sans-serif -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #0b0b0b;
+      --black-soft: #121212;
+      --ivory: #f7f3ec;
+      --white: #ffffff;
+      --gold: #c7a96b;
+      --gold-light: #e3cf9b;
+      --muted: #b7b1a7;
+      --line: rgba(255,255,255,.14);
+      --shadow: 0 25px 80px rgba(0,0,0,.3);
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "Inter", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--sans);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* NAV */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(8,8,8,.74);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .nav {
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .brand strong {
+      font-family: var(--serif);
+      font-size: 1.55rem;
+      letter-spacing: .13em;
+      font-weight: 500;
+    }
+
+    .brand span {
+      color: var(--gold);
+      font-size: .61rem;
+      letter-spacing: .24em;
+      margin-top: 7px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 30px;
+      font-size: .82rem;
+      text-transform: uppercase;
+      letter-spacing: .13em;
+    }
+
+    .nav-links a {
+      transition: color .25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .nav-cta,
+    .button-primary {
+      background: var(--gold);
+      color: #111;
+      padding: 13px 20px;
+      border-radius: 2px;
+      font-weight: 600;
+      transition: transform .25s ease, background .25s ease;
+    }
+
+    .nav-cta:hover,
+    .button-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      color: #111 !important;
+    }
+
+    .menu-button {
+      display: none;
+      background: transparent;
+      border: 0;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      align-items: center;
+      position: relative;
+      padding-top: 80px;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(6,6,6,.96) 0%, rgba(6,6,6,.80) 44%, rgba(6,6,6,.34) 100%),
+        url("https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1800&q=88") center/cover no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 210px;
+      background: linear-gradient(transparent, var(--black));
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+      padding: 80px 0;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: .28em;
+      font-size: .72rem;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(4rem, 9vw, 8rem);
+      line-height: .82;
+      letter-spacing: -.025em;
+      margin-bottom: 28px;
+    }
+
+    h1 span {
+      color: var(--gold-light);
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .hero p {
+      color: #d4d0c8;
+      max-width: 590px;
+      font-size: 1.02rem;
+      font-weight: 300;
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      min-height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 24px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .75rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .button-outline {
+      border-color: rgba(255,255,255,.4);
+      color: white;
+      transition: .25s ease;
+    }
+
+    .button-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold-light);
+    }
+
+    /* SHARED SECTIONS */
+    section {
+      padding: 120px 0;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 6vw, 5.4rem);
+      line-height: .95;
+      font-weight: 400;
+      margin-bottom: 25px;
+    }
+
+    .section-kicker {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: .26em;
+      font-size: .69rem;
+      margin-bottom: 20px;
+    }
+
+    .section-copy {
+      color: var(--muted);
+      max-width: 650px;
+      font-weight: 300;
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .portrait {
+      min-height: 620px;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.03), rgba(0,0,0,.42)),
+        url("./elias-about.jpg") center top/cover no-repeat;
+      box-shadow: var(--shadow);
+    }
+
+    .portrait::before {
+      content: "Elias Hanna · Beverly Hills Hair Stylist";
+      position: absolute;
+      left: 24px;
+      bottom: 22px;
+      z-index: 2;
+      font-size: .68rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.72);
+    }
+
+    .about-text .signature {
+      margin-top: 36px;
+      font-family: var(--serif);
+      font-style: italic;
+      color: var(--gold-light);
+      font-size: 2rem;
+    }
+
+    /* SERVICES */
+    .services {
+      background: var(--ivory);
+      color: var(--black);
+    }
+
+    .services .section-copy {
+      color: #716c64;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      margin-top: 60px;
+      background: #d8d1c5;
+      border: 1px solid #d8d1c5;
+    }
+
+    .service-card {
+      background: var(--ivory);
+      padding: 42px;
+      transition: background .25s ease, transform .25s ease;
+    }
+
+    .service-card:hover {
+      background: #fff;
+    }
+
+    .service-number {
+      color: #a4864d;
+      font-size: .7rem;
+      letter-spacing: .15em;
+      margin-bottom: 45px;
+    }
+
+    .service-card h3 {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: #746f67;
+      font-size: .92rem;
+    }
+
+    /* GALLERY */
+    .gallery-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: end;
+      margin-bottom: 45px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr .8fr;
+      grid-template-rows: 310px 310px;
+      gap: 14px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      background: #181818;
+      position: relative;
+    }
+
+    .gallery-item:first-child {
+      grid-row: span 2;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(.86);
+      transition: transform .6s ease, filter .3s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.035);
+      filter: saturate(1);
+    }
+
+
+
+    /* WORK / INSTAGRAM GALLERY */
+    .work-instagram-shell {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 18px;
+      align-items: stretch;
+      margin-top: 48px;
+    }
+
+    .work-instagram-frame-wrap {
+      background: #f7f5f1;
+      color: #111;
+      border: 1px solid rgba(255,255,255,.08);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      min-height: 720px;
+    }
+
+    .work-instagram-header {
+      min-height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 0 22px;
+      border-bottom: 1px solid #ddd6ca;
+      font-size: .7rem;
+      letter-spacing: .16em;
+    }
+
+    .work-instagram-header span {
+      color: #9f8450;
+      font-weight: 600;
+    }
+
+    .work-instagram-header a {
+      color: #111;
+      font-size: .78rem;
+      letter-spacing: .03em;
+      font-weight: 600;
+    }
+
+    .work-instagram-frame {
+      width: 100%;
+      height: 656px;
+      display: block;
+      background: white;
+      border: 0;
+    }
+
+    .work-instagram-copy {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      border: 1px solid rgba(255,255,255,.09);
+      padding: 48px 42px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 720px;
+    }
+
+    .work-instagram-copy h3 {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 4vw, 3.9rem);
+      line-height: .95;
+      font-weight: 400;
+      margin: 8px 0 20px;
+    }
+
+    .work-instagram-copy p {
+      color: var(--muted);
+      font-weight: 300;
+      max-width: 430px;
+    }
+
+    .work-instagram-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .work-instagram-note {
+      margin-top: 24px;
+      color: #7a746b;
+      font-size: .74rem;
+      line-height: 1.5;
+    }
+
+    /* BOOKING */
+    .booking {
+      position: relative;
+      background:
+        radial-gradient(circle at 75% 25%, rgba(199,169,107,.15), transparent 35%),
+        var(--black-soft);
+    }
+
+    .booking-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .booking-panel {
+      background: #f8f5ef;
+      color: #111;
+      padding: 38px;
+      min-height: 500px;
+      box-shadow: var(--shadow);
+    }
+
+    .calendar-placeholder {
+      border: 1px solid #d9d2c7;
+      min-height: 420px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .calendar-placeholder .cal-icon {
+      font-size: 3rem;
+      margin-bottom: 12px;
+    }
+
+    .calendar-placeholder h3 {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .calendar-placeholder p {
+      color: #716c64;
+      max-width: 500px;
+      margin: 0 auto 24px;
+      font-size: .93rem;
+    }
+
+    .booking-notes {
+      margin-top: 35px;
+      display: grid;
+      gap: 17px;
+    }
+
+    .booking-note {
+      border-top: 1px solid var(--line);
+      padding-top: 17px;
+      color: #c7c1b7;
+      font-size: .9rem;
+    }
+
+    .booking-note strong {
+      color: white;
+      font-weight: 500;
+    }
+
+    /* LOCATION */
+    .location {
+      padding: 90px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .location-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .location h2 {
+      font-family: var(--serif);
+      font-size: 3rem;
+      font-weight: 400;
+    }
+
+    .location p {
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 50px 0;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: center;
+      color: #918b82;
+      font-size: .78rem;
+    }
+
+    .socials {
+      display: flex;
+      gap: 22px;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      font-size: .7rem;
+    }
+
+    .socials a:hover {
+      color: var(--gold);
+    }
+
+
+    /* MOBILE-FIRST POLISH */
+    body {
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .button,
+    .nav-links a,
+    .menu-button {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .location-socials {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 9px;
+      margin-top: 18px;
+    }
+
+    .location-socials a {
+      color: var(--gold-light);
+      font-size: .75rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      transition: color .2s ease;
+    }
+
+    .location-socials a:hover {
+      color: white;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .container {
+        width: min(100% - 36px, 1180px);
+      }
+
+      header {
+        padding-top: env(safe-area-inset-top);
+      }
+
+      .nav {
+        min-height: 72px;
+      }
+
+      .brand strong {
+        font-size: 1.35rem;
+      }
+
+      .brand span {
+        font-size: .56rem;
+        letter-spacing: .2em;
+      }
+
+      .menu-button {
+        display: grid;
+        place-items: center;
+        width: 48px;
+        height: 48px;
+        border: 1px solid rgba(255,255,255,.12);
+        border-radius: 50%;
+        font-size: 1.25rem;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: rgba(10,10,10,.98);
+        padding: 12px 18px calc(22px + env(safe-area-inset-bottom));
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 18px 40px rgba(0,0,0,.3);
+        max-height: calc(100svh - 72px);
+        overflow-y: auto;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links li a {
+        display: flex;
+        align-items: center;
+        min-height: 54px;
+        padding: 0 4px;
+        border-bottom: 1px solid rgba(255,255,255,.06);
+      }
+
+      .nav-links .nav-cta {
+        justify-content: center;
+        border-bottom: 0;
+        margin-top: 12px;
+        min-height: 52px;
+      }
+
+      .hero {
+        min-height: 100svh;
+        padding-top: 72px;
+        background-position: 64% center;
+      }
+
+      .hero-content {
+        max-width: 640px;
+        padding: 64px 0 54px;
+      }
+
+      .about-grid,
+      .booking-grid,
+      .work-instagram-shell {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid,
+      .booking-grid {
+        gap: 44px;
+      }
+
+      .portrait {
+        min-height: 520px;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .work-instagram-shell {
+        gap: 14px;
+      }
+
+      .work-instagram-copy {
+        min-height: auto;
+      }
+
+      .gallery-head {
+        align-items: flex-start;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 420px 260px 260px;
+      }
+
+      .gallery-item:first-child {
+        grid-column: span 2;
+        grid-row: auto;
+      }
+
+      .location-row,
+      .footer-row {
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .container {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .brand strong {
+        font-size: 1.23rem;
+        letter-spacing: .11em;
+      }
+
+      .brand span {
+        max-width: 230px;
+        line-height: 1.25;
+      }
+
+      .hero {
+        min-height: 92svh;
+        background-position: 68% center;
+        background-image:
+          linear-gradient(90deg, rgba(6,6,6,.96) 0%, rgba(6,6,6,.82) 55%, rgba(6,6,6,.48) 100%),
+          url("https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=86");
+      }
+
+      .hero-content {
+        padding: 52px 0 42px;
+      }
+
+      .eyebrow {
+        font-size: .63rem;
+        letter-spacing: .2em;
+        margin-bottom: 16px;
+      }
+
+      h1 {
+        font-size: clamp(4rem, 19vw, 5.5rem);
+        line-height: .84;
+        margin-bottom: 22px;
+      }
+
+      .hero p {
+        font-size: .96rem;
+        line-height: 1.7;
+        max-width: 92%;
+        margin-bottom: 28px;
+      }
+
+      .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        width: 100%;
+      }
+
+      .hero-actions .button {
+        width: 100%;
+      }
+
+      section {
+        padding: 76px 0;
+      }
+
+      .section-title {
+        font-size: clamp(2.75rem, 13vw, 4rem);
+        margin-bottom: 20px;
+      }
+
+      .section-copy {
+        font-size: .95rem;
+        line-height: 1.75;
+      }
+
+      .about-grid {
+        gap: 34px;
+      }
+
+      .portrait {
+        min-height: 430px;
+        background-position: center;
+      }
+
+      .portrait::before {
+        left: 18px;
+        right: 18px;
+        bottom: 18px;
+        font-size: .61rem;
+      }
+
+      .about-text .signature {
+        margin-top: 28px;
+      }
+
+      .service-grid {
+        margin-top: 42px;
+      }
+
+      .service-card {
+        padding: 28px 24px;
+      }
+
+      .service-number {
+        margin-bottom: 26px;
+      }
+
+      .service-card h3 {
+        font-size: 1.8rem;
+      }
+
+      .gallery-head {
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 30px;
+      }
+
+      /* Keep the V5 Work + Instagram look, but stack it naturally on phones. */
+      .work-instagram-shell {
+        margin-top: 30px;
+        gap: 12px;
+      }
+
+      .work-instagram-frame-wrap {
+        min-height: auto;
+        box-shadow: 0 16px 45px rgba(0,0,0,.24);
+      }
+
+      .work-instagram-header {
+        min-height: 56px;
+        padding: 0 16px;
+        gap: 12px;
+        font-size: .62rem;
+        letter-spacing: .12em;
+      }
+
+      .work-instagram-header a {
+        font-size: .7rem;
+      }
+
+      .work-instagram-frame {
+        height: 565px;
+      }
+
+      .work-instagram-copy {
+        padding: 34px 24px;
+        min-height: auto;
+      }
+
+      .work-instagram-copy h3 {
+        font-size: clamp(2.45rem, 12vw, 3.4rem);
+        margin-bottom: 18px;
+      }
+
+      .work-instagram-copy p {
+        font-size: .93rem;
+        line-height: 1.7;
+      }
+
+      .work-instagram-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-top: 24px;
+      }
+
+      .work-instagram-actions .button {
+        width: 100%;
+      }
+
+      .work-instagram-note {
+        margin-top: 18px;
+        font-size: .69rem !important;
+      }
+
+      .booking-grid {
+        gap: 34px;
+      }
+
+      .booking-panel {
+        padding: 16px;
+        min-height: auto;
+      }
+
+      .calendar-placeholder {
+        min-height: 340px;
+        padding: 24px 18px;
+      }
+
+      .calendar-placeholder .cal-icon {
+        font-size: 2.5rem;
+      }
+
+      .calendar-placeholder h3 {
+        font-size: 1.85rem;
+      }
+
+      .calendar-placeholder .button {
+        width: 100%;
+      }
+
+      .booking-notes {
+        margin-top: 28px;
+      }
+
+      .location {
+        padding: 68px 0;
+      }
+
+      .location-row {
+        flex-direction: column;
+        gap: 28px;
+      }
+
+      .location h2 {
+        font-size: 2.5rem;
+        line-height: 1;
+      }
+
+      .location-row > .button {
+        width: 100%;
+      }
+
+      .location-socials {
+        gap: 12px;
+      }
+
+      .location-socials a {
+        line-height: 1.5;
+      }
+
+      footer {
+        padding: 38px 0 calc(38px + env(safe-area-inset-bottom));
+      }
+
+      .footer-row {
+        flex-direction: column;
+        gap: 22px;
+      }
+
+      .socials {
+        display: grid;
+        gap: 13px;
+        width: 100%;
+      }
+
+      .socials a {
+        display: flex;
+        align-items: center;
+        min-height: 42px;
+        border-bottom: 1px solid rgba(255,255,255,.07);
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <header>
+    <div class="container nav">
+      <a href="#home" class="brand" aria-label="Elias Hanna home">
+        <strong>ELIAS HANNA</strong>
+        <span>HAIR STYLIST · BEVERLY HILLS</span>
+      </a>
+
+      <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Work & Instagram</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a class="nav-cta" href="#book">Book Appointment</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="home">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <p class="eyebrow">Welcome · Hair Stylist · Beverly Hills</p>
+          <h1>Elias<br><span>Hanna</span></h1>
+          <p>
+            I create luxury hair in Beverly Hills — tailored to your features, texture,
+            lifestyle, and personal style.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#book" class="button button-primary">Schedule Appointment</a>
+            <a href="#work" class="button button-outline">View My Work</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="container about-grid">
+        <div class="portrait" aria-label="Portrait placeholder for Elias Hanna"></div>
+
+        <div class="about-text">
+          <p class="section-kicker">The Stylist</p>
+          <h2 class="section-title">Luxury hair,<br>made personal.</h2>
+          <p class="section-copy">
+            I’m Elias Hanna, a hair stylist in Beverly Hills. I create polished, modern looks with an emphasis on personal style, detail, and a refined salon experience.
+            <br><br>
+            Every appointment begins with a thoughtful consultation so your final look feels intentional, flattering, and uniquely yours.
+          </p>
+          <div class="signature">Elias Hanna</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+      <div class="container">
+        <p class="section-kicker">Services</p>
+        <h2 class="section-title">Designed around you.</h2>
+        <p class="section-copy">
+          Every service starts with a conversation about your hair, your goals, and the look you want to achieve.
+        </p>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-number">01</div>
+            <h3>Cut & Styling</h3>
+            <p>I create personalized cuts and styling designed around your features, texture, and lifestyle.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-number">02</div>
+            <h3>Color</h3>
+            <p>I offer dimensional, polished color with a tailored consultation and a focus on a seamless finish.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-number">03</div>
+            <h3>Highlights & Balayage</h3>
+            <p>I create customized brightness and dimension for an effortless, modern Beverly Hills finish.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-number">04</div>
+            <h3>Extensions & Special Services</h3>
+            <p>Specialty services are available by consultation so I can recommend the right approach for your hair goals.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="work">
+      <div class="container">
+        <div class="gallery-head">
+          <div>
+            <p class="section-kicker">Work & Instagram</p>
+            <h2 class="section-title">See my work.</h2>
+          </div>
+          <p class="section-copy">
+            Explore my latest work, transformations, and salon moments directly through my Instagram.
+          </p>
+        </div>
+
+        <div class="work-instagram-shell">
+          <div class="work-instagram-frame-wrap">
+            <div class="work-instagram-header">
+              <span>MY LIVE INSTAGRAM</span>
+              <a href="https://www.instagram.com/elias_s_hanna/" target="_blank" rel="noopener">@elias_s_hanna ↗</a>
+            </div>
+            <iframe
+              class="work-instagram-frame"
+              src="https://www.instagram.com/elias_s_hanna/embed/"
+              title="Featured work from Elias Hanna Instagram"
+              loading="lazy"
+              allowtransparency="true"
+              frameborder="0"
+              scrolling="no">
+            </iframe>
+          </div>
+
+          <div class="work-instagram-copy">
+            <p class="section-kicker">My Portfolio</p>
+            <h3>My latest work,<br>all in one place.</h3>
+            <p>
+              I use this space to share my newest work, finished looks, and salon moments. You can explore my Instagram directly here or open my full page and reels for even more.
+            </p>
+
+            <div class="work-instagram-actions">
+              <a class="button button-primary" href="https://www.instagram.com/elias_s_hanna/" target="_blank" rel="noopener">
+                View My Instagram
+              </a>
+              <a class="button button-outline" href="https://www.instagram.com/elias_s_hanna/reels/" target="_blank" rel="noopener">
+                Watch My Reels
+              </a>
+            </div>
+
+            <p class="work-instagram-note">
+              If Instagram limits the preview in your browser, you can still use the buttons above to open my profile and reels directly.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Google Calendar Booking -->
+    <section class="booking" id="book">
+      <div class="container booking-grid">
+        <div>
+          <p class="section-kicker">Appointments</p>
+          <h2 class="section-title">Let’s book your appointment.</h2>
+          <p class="section-copy">
+            You can select a convenient appointment time through my Google Calendar booking page. Once my Google Appointment Schedule is connected, this button will take you directly to it.
+          </p>
+
+          <div class="booking-notes">
+            <div class="booking-note">
+              <strong>Location</strong><br>
+              I work from BOMANE Salon · 8668 Wilshire Blvd, Beverly Hills, CA 90211
+            </div>
+            <div class="booking-note">
+              <strong>Appointments</strong><br>
+              My availability will be shown through the online calendar.
+            </div>
+            <div class="booking-note">
+              <strong>Consultations</strong><br>
+              Some specialty services may require a consultation before booking.
+            </div>
+          </div>
+        </div>
+
+        <div class="booking-panel">
+          <div class="calendar-placeholder">
+            <div class="cal-icon">◫</div>
+            <h3>Book with me</h3>
+            <p>
+              Click below to open my Google Calendar appointment scheduler. Once my booking link is added, this button will take you there.
+            </p>
+
+            <!--
+              IMPORTANT:
+              Replace the href below with Elias's real Google Appointment Schedule link.
+
+              Example formats may look like:
+              https://calendar.app.google/XXXXXXXXXXXX
+              OR
+              https://calendar.google.com/calendar/appointments/schedules/XXXXXXXXXXXX
+            -->
+            <a
+              class="button button-primary"
+              id="googleCalendarButton"
+              href="YOUR_GOOGLE_CALENDAR_APPOINTMENT_LINK"
+              target="_blank"
+              rel="noopener"
+            >
+              Open Appointment Calendar
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location -->
+    <section class="location" id="location">
+      <div class="container location-row">
+        <div>
+          <p class="section-kicker">Beverly Hills</p>
+          <h2>Visit me at BOMANE Salon</h2>
+          <p>8668 Wilshire Blvd · Beverly Hills, CA 90211</p>
+          <div class="location-socials">
+            <a href="https://www.instagram.com/bomanesalon/" target="_blank" rel="noopener">
+              Follow BOMANE Salon on Instagram ↗
+            </a>
+            <a href="https://www.instagram.com/elias_s_hanna/" target="_blank" rel="noopener">
+              Follow Me on Instagram · @elias_s_hanna ↗
+            </a>
+          </div>
+        </div>
+
+        <a
+          class="button button-outline"
+          href="https://www.google.com/maps/search/?api=1&query=8668+Wilshire+Blvd+Beverly+Hills+CA+90211"
+          target="_blank"
+          rel="noopener"
+        >
+          Get Directions
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div>© <span id="year"></span> Elias Hanna. All rights reserved.</div>
+
+      <div class="socials">
+        <a href="https://www.instagram.com/elias_s_hanna/" data-instagram-link aria-label="Elias Hanna Instagram" target="_blank" rel="noopener">My Instagram</a>
+        <a href="https://www.instagram.com/bomanesalon/" aria-label="BOMANE Salon Instagram" target="_blank" rel="noopener">Salon Instagram</a>
+        <a href="#book">Book With Me</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile navigation
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.textContent = isOpen ? "×" : "☰";
+    });
+
+    document.querySelectorAll("#navLinks a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.textContent = "☰";
+      });
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 900) {
+        navLinks.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.textContent = "☰";
+      }
+    });
+
+    // Current copyright year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+
+    // Instagram
+    // Elias's Instagram profile.
+    const INSTAGRAM_PROFILE_URL = "https://www.instagram.com/elias_s_hanna/";
+
+    document.querySelectorAll("[data-instagram-link]").forEach(link => {
+      link.href = INSTAGRAM_PROFILE_URL;
+    });
+
+    // Friendly reminder if Google Calendar link hasn't been added yet.
+    const calendarButton = document.getElementById("googleCalendarButton");
+
+    calendarButton.addEventListener("click", (event) => {
+      if (calendarButton.getAttribute("href") === "YOUR_GOOGLE_CALENDAR_APPOINTMENT_LINK") {
+        event.preventDefault();
+        alert(
+          "Add Elias's Google Appointment Schedule link in index.html first. Search for YOUR_GOOGLE_CALENDAR_APPOINTMENT_LINK and replace it with the real URL."
+        );
+      }
+    });
+  </script>
+</body>
+</html>
